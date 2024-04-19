@@ -4,6 +4,20 @@
 스프링 부트 JPA를 활용한 로그인, 회원가입, 조직, 게시글, 채팅등을 개발하는 프로젝트 입니다.
 
 
+# API
++ 1. 로그인(Post)
+  2. 회원가입(Get)
+  3. 적업 선택(Post)
+  4. 조직 생성(Post)
+  5. 조직 선택(Get)
+  7. 상품 검색(Get)
+  8. 조직 검색(Get)
+  9. 조직 관리(Update)
+  10. 상품 게시(Post)
+  11. 상품 구매(Get)
+  12. 상품 상세 보기(Get)
+
+
 ## Install Postman
 포스트맨을 설치해서 localhost로 테스트 해보세요! 
 
@@ -37,6 +51,7 @@ https://www.postman.com/downloads
   ```sql
   REPLACE INTO `roles` VALUES (1,'ADMIN');
   ```
+
 
 
 
