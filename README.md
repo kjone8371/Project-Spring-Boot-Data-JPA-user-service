@@ -25,9 +25,6 @@ https://www.postman.com/downloads
 
 + **Create MySQL database**
   ```properties
-  spring.application.name=kjone-Spring-Boot-JPA-Project
-  server.port=7490
-
   spring.datasource.url= jdbc:mysql://localhost:3306/Study_JPA
   spring.datasource.username=유저이름
   spring.datasource.password=비빌번호
