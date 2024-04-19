@@ -5,7 +5,8 @@
 
 
 ## Install Postman
-포스트맨을 설치해서 localhost로 테스트 해보세요!
+포스트맨을 설치해서 localhost로 테스트 해보세요! 
+
 https://www.postman.com/downloads
 
 
@@ -18,6 +19,7 @@ https://www.postman.com/downloads
   spring.datasource.username=유저이름
   spring.datasource.password=비빌번호
   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+  ```
 
 + **Create Mail Config**
   ```properties
@@ -31,9 +33,12 @@ https://www.postman.com/downloads
   spring.mail.password=umwb ### ### ###
   spring.mail.properties.mail.smtp.starttls.enable=true
   spring.mail.properties.mail.smtp.auth=true
-
+  ```
 # DATA.SQL
   ```sql
   REPLACE INTO `roles` VALUES (1,'ADMIN');
+  ```
+
+
 
 
