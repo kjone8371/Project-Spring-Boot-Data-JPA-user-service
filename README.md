@@ -17,29 +17,20 @@
   spring.datasource.username=root
   spring.datasource.password=7590sa12
   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-
   
 
 + **Create Mail Config**
-```properties
-spring.application.name=kjone-Spring-Boot-JPA-Project
-server.port=7490
+  ```properties
+  spring.application.name=kjone-Spring-Boot-JPA-Project
+  server.port=7490
 
-spring.mail.default-encoding=UTF-8
-spring.mail.host=smtp.gmail.com
-spring.mail.port=587
-spring.mail.username=geniusfusion7@gmail.com
-spring.mail.password=umwb uztr mfst nbtn
-spring.mail.properties.mail.smtp.starttls.enable=true
-spring.mail.properties.mail.smtp.auth=true
-
-
-
-
-
-
-
-
+  spring.mail.default-encoding=UTF-8
+  spring.mail.host=smtp.gmail.com
+  spring.mail.port=587
+  spring.mail.username=geniusfusion7@gmail.com
+  spring.mail.password=umwb uztr mfst nbtn
+  spring.mail.properties.mail.smtp.starttls.enable=true
+  spring.mail.properties.mail.smtp.auth=true
 
 
 
