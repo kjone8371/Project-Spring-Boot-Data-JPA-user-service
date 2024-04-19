@@ -29,7 +29,7 @@ https://www.postman.com/downloads
   spring.mail.host=smtp.gmail.com
   spring.mail.port=587
   spring.mail.username=geniusfusion7@gmail.com
-  spring.mail.password=umwb ### ### ###
+  spring.mail.password=#### #### ####
   spring.mail.properties.mail.smtp.starttls.enable=true
   spring.mail.properties.mail.smtp.auth=true
   ```
