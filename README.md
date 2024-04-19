@@ -6,6 +6,7 @@
 
 ## Install Postman
 포스트맨을 설치해서 localhost로 테스트 해보세요!
+https://www.postman.com/downloads
 
 
 + **Create MySQL database**
@@ -14,8 +15,8 @@
   server.port=7490
 
   spring.datasource.url= jdbc:mysql://localhost:3306/Study_JPA
-  spring.datasource.username=root
-  spring.datasource.password=7590sa12
+  spring.datasource.username=유저이름
+  spring.datasource.password=비빌번호
   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 + **Create Mail Config**
@@ -27,10 +28,12 @@
   spring.mail.host=smtp.gmail.com
   spring.mail.port=587
   spring.mail.username=geniusfusion7@gmail.com
-  spring.mail.password=umwb uztr mfst nbtn
+  spring.mail.password=umwb ### ### ###
   spring.mail.properties.mail.smtp.starttls.enable=true
   spring.mail.properties.mail.smtp.auth=true
 
 # DATA.SQL
+  ```sql
+  REPLACE INTO `roles` VALUES (1,'ADMIN');
 
 
