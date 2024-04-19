@@ -10,12 +10,12 @@
   3. 적업 선택(Post)
   4. 조직 생성(Post)
   5. 조직 선택(Get)
-  7. 상품 검색(Get)
-  8. 조직 검색(Get)
-  9. 조직 관리(Update)
-  10. 상품 게시(Post)
-  11. 상품 구매(Get)
-  12. 상품 상세 보기(Get)
+  6. 상품 검색(Get)
+  7. 조직 검색(Get)
+  8. 조직 관리(Update)
+  9. 상품 게시(Post)
+  10. 상품 구매(Get)
+  11. 상품 상세 보기(Get)
 
 
 ## Install Postman
