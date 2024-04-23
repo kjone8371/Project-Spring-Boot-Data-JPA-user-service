@@ -20,6 +20,6 @@ public class OrganizationEntity {
     @OneToMany(mappedBy = "oranization")
     private List<UserEntity> members = new ArrayList<>(); //조직의 구성원 목록
 
-
+    
 
 }
