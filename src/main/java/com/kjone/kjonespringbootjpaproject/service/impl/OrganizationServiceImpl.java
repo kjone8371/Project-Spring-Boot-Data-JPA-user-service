@@ -1,7 +1,7 @@
 package com.kjone.kjonespringbootjpaproject.service.impl;
 
 import com.kjone.kjonespringbootjpaproject.entity.OrganizationEntity;
-import com.kjone.kjonespringbootjpaproject.entity.Role;
+import com.kjone.kjonespringbootjpaproject.domain.role.Role;
 import com.kjone.kjonespringbootjpaproject.entity.UserEntity;
 import com.kjone.kjonespringbootjpaproject.service.OrganizationService;
 import lombok.RequiredArgsConstructor;

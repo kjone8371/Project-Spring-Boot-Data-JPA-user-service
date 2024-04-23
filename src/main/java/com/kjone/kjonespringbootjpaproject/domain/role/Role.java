@@ -1,4 +1,4 @@
-package com.kjone.kjonespringbootjpaproject.entity;
+package com.kjone.kjonespringbootjpaproject.domain.role;
 
 
 import lombok.Getter;

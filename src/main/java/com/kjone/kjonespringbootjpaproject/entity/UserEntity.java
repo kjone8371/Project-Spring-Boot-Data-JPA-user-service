@@ -1,6 +1,7 @@
 package com.kjone.kjonespringbootjpaproject.entity;
 
 
+import com.kjone.kjonespringbootjpaproject.domain.role.Role;
 import jakarta.persistence.*;
 import lombok.*;
 

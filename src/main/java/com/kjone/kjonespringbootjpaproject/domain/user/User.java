@@ -1,8 +1,8 @@
-package com.kjone.kjonespringbootjpaproject.domain;
+package com.kjone.kjonespringbootjpaproject.domain.user;
 
 
 import com.kjone.kjonespringbootjpaproject.entity.OrganizationEntity;
-import com.kjone.kjonespringbootjpaproject.entity.Role;
+import com.kjone.kjonespringbootjpaproject.domain.role.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 
