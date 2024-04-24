@@ -1,6 +1,7 @@
-package com.kjone.kjonespringbootjpaproject.domain;
+package com.kjone.kjonespringbootjpaproject.domain.email;
 
 
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

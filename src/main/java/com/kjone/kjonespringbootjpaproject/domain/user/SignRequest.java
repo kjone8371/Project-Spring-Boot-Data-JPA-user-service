@@ -16,7 +16,4 @@ public class SignRequest {
     private String username;
     private int age;
     private Role role;
-
-
-
 }

@@ -41,7 +41,5 @@ public class UserEntity {
     private OrganizationEntity organization;  // 사용자가 속한 조직
 
 
-
-
 }
 

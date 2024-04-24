@@ -4,8 +4,13 @@ package com.kjone.kjonespringbootjpaproject.domain.user;
 import com.kjone.kjonespringbootjpaproject.entity.OrganizationEntity;
 import com.kjone.kjonespringbootjpaproject.domain.role.Role;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
+@Setter
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class User {
     private String id;

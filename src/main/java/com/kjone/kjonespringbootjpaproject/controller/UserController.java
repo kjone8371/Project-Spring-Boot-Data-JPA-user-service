@@ -3,7 +3,6 @@ package com.kjone.kjonespringbootjpaproject.controller;
 
 import com.kjone.kjonespringbootjpaproject.domain.user.SignRequest;
 import com.kjone.kjonespringbootjpaproject.domain.user.SignResponse;
-import com.kjone.kjonespringbootjpaproject.entity.UserEntity;
 import com.kjone.kjonespringbootjpaproject.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -27,5 +26,5 @@ public class UserController {
     public ResponseEntity<SignResponse> login(@RequestBody SignRequest request) throws Exception{
         return new ResponseEntity<>(userService.login(request), HttpStatus.OK);
     }
-
+    
 }
