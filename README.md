@@ -29,7 +29,7 @@
   11. 상품 상세 보기(Get)
 
 # Spring Boot Buil.Gradle
-```
+```build
     implementation 'org.springframework.boot:spring-boot-starter-mail'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
