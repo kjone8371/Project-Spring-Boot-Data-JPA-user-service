@@ -28,7 +28,8 @@
   10. 상품 구매(Get)
   11. 상품 상세 보기(Get)
 
-# Spring Boot Buil.Gradle
+# Spring Boot implementation
++ build.gradle
 ```build
     implementation 'org.springframework.boot:spring-boot-starter-mail'
     implementation 'org.springframework.boot:spring-boot-starter-security'
