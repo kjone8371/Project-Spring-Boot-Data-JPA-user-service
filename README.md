@@ -28,6 +28,17 @@
   10. 상품 구매(Get)
   11. 상품 상세 보기(Get)
 
+# Spring Boot Buil.Gradle
+```
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+    testImplementation 'org.springframework.security:spring-security-test'
+
+
+```
+
 
 ## Install Postman
 포스트맨을 설치해서 localhost로 테스트 해보세요! 
