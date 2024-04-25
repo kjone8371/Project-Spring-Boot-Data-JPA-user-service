@@ -2,6 +2,18 @@
 스프링 부트 JPA를 활용한 로그인, 회원가입, 조직, 게시글, 채팅등을 개발하는 프로젝트 입니다.
 ![Spring_Login](https://github.com/kjone8371/Project-Spring-Boot-Data-JPA-user-service/assets/103641429/08505529-c7a0-4104-adb1-f57542724b6e)
 
+# 서비스 / 제품 개요
+  + 클라이언트
+  + 사장
+  + 개발자
+
+# 기능요약
+  + 조직 관리
+  + 검색
+  + 게시
+  + 파일 관리 (클라우드 서비스)
+  + 사용자
+
 
 # API
 + 1. 로그인(Post)
@@ -47,6 +59,9 @@ https://www.postman.com/downloads
   ```sql
   REPLACE INTO `roles` VALUES (1,'ADMIN');
   ```
+
+
+
 
 
 
