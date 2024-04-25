@@ -2,7 +2,6 @@ package com.kjone.kjonespringbootjpaproject.domain.role;
 
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 @ToString
