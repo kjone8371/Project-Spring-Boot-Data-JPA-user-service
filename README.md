@@ -32,6 +32,7 @@
 ```
     implementation 'org.springframework.boot:spring-boot-starter-mail'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
     testImplementation 'org.springframework.security:spring-security-test'
 ```
