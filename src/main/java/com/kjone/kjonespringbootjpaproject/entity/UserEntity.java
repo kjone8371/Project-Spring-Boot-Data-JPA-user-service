@@ -16,7 +16,8 @@ import lombok.*;
 public class UserEntity {
 
     @Id
-    private String id; // 사용자 아이디
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //DB가 알아서 부여해주는 값
+    private Long id; // 사용자 아이디
 
     private String email; // 구글 이메일
 

@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SignResponse {
-    private String id;
+    private Long id;
     private String email;
     private String password;
     private String check_password;

@@ -19,7 +19,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody SignRequest request) throws Exception{
+    public ResponseEntity<Boolean> register(@RequestBody SignRequest request) throws Exception{
         return new ResponseEntity<>(userService.register(request), HttpStatus.OK);
     }
     @PostMapping("/login")

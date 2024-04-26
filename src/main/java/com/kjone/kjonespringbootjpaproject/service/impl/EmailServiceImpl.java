@@ -1,6 +1,6 @@
 package com.kjone.kjonespringbootjpaproject.service.impl;
 
-import com.kjone.kjonespringbootjpaproject.repository.EmailRepository;
+//import com.kjone.kjonespringbootjpaproject.repository.EmailRepository;
 import com.kjone.kjonespringbootjpaproject.service.EmailService;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class EmailServiceImpl implements EmailService {
 
-    private final EmailRepository emailRepository;
+//    private final EmailRepository emailRepository;
 
     private final JavaMailSender javaMailSender;  // 의존성 주입을 통해 필요한 객체를 가져옴
     private static final String senderEmail= "geniusfusion7@gmail.com";
