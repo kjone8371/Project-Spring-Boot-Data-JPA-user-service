@@ -1,15 +1,18 @@
 package com.kjone.kjonespringbootjpaproject.service.impl;
 
+import com.kjone.kjonespringbootjpaproject.domain.role.Role;
 import com.kjone.kjonespringbootjpaproject.domain.user.SignRequest;
 import com.kjone.kjonespringbootjpaproject.domain.user.SignResponse;
+import com.kjone.kjonespringbootjpaproject.entity.OrganizationEntity;
 import com.kjone.kjonespringbootjpaproject.entity.UserEntity;
+import com.kjone.kjonespringbootjpaproject.repository.OrganizationRepository;
 import com.kjone.kjonespringbootjpaproject.repository.UserRepository;
 import com.kjone.kjonespringbootjpaproject.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-
+import java.util.Optional;
 
 
 @Service
@@ -32,8 +35,9 @@ public class UserServiceImpl implements UserService {
         if (userRepository.findByEmail(request.getEmail()).isPresent()) {
             throw new Exception("이 이메일은 이미 사용 중입니다.");
         }
-        
-            UserEntity entity = UserEntity.builder()
+
+
+        UserEntity entity = UserEntity.builder()
                     .email(request.getEmail())
                     .password(passwordEncoder.encode(request.getPassword()))
                     .check_password(request.getCheck_password())
@@ -58,4 +62,6 @@ public class UserServiceImpl implements UserService {
 
         return new SignResponse(user);
     }
+
+
 }
