@@ -18,20 +18,14 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //DB가 알아서 부여해주는 값
     private Long id; // 사용자 아이디
-
     private String email; // 구글 이메일
-
     private String password; // 비밀번호
-
     private String check_password; // 비밀번호 확인
-
     private String username; // 유저 이름
 
     @Column(name = "birth") // DB 테이블 나이 생년월일
     private int age; // 생년월일 나이
-
     private String createTime; // 회원 생성 날짜
-
     private Character emailTime; // 이메일 발급 인증 날짜
 
     @Enumerated(EnumType.STRING)
