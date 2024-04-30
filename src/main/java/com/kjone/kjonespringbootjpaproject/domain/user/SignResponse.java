@@ -23,7 +23,7 @@ public class SignResponse {
     private String username;
     private int age;
     private Role role;
-    private List<Role> roles = new ArrayList<>();
+    private List<Role> roles = new ArrayList<>(); // 권한을 가진 사용자 전체 직원 가져오기
     private String token;
 
     public SignResponse(UserEntity user) {

@@ -1,22 +1,14 @@
-package com.kjone.kjonespringbootjpaproject.entity;
+package com.kjone.kjonespringbootjpaproject.domain.organization;
 
 
-import com.kjone.kjonespringbootjpaproject.domain.role.Role;
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
 
-
-@Entity
-@Setter
 @Getter
-@Table(name = "organization")
-public class OrganizationEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Setter
+public class RequestOrg {
+
     private Long id;
     private String name; //조직 이름
 //    private Role or_roles; // 조직의 권한
@@ -25,5 +17,4 @@ public class OrganizationEntity {
 
 //    @OneToMany(mappedBy = "organization")
 //    private List<UserEntity> members = new ArrayList<>(); //조직의 구성원 목록
-
 }

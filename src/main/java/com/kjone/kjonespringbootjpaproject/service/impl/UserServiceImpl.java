@@ -1,11 +1,8 @@
 package com.kjone.kjonespringbootjpaproject.service.impl;
 
-import com.kjone.kjonespringbootjpaproject.domain.role.Role;
 import com.kjone.kjonespringbootjpaproject.domain.user.SignRequest;
 import com.kjone.kjonespringbootjpaproject.domain.user.SignResponse;
-import com.kjone.kjonespringbootjpaproject.entity.OrganizationEntity;
 import com.kjone.kjonespringbootjpaproject.entity.UserEntity;
-import com.kjone.kjonespringbootjpaproject.repository.OrganizationRepository;
 import com.kjone.kjonespringbootjpaproject.repository.UserRepository;
 import com.kjone.kjonespringbootjpaproject.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -40,7 +37,7 @@ public class UserServiceImpl implements UserService {
         UserEntity entity = UserEntity.builder()
                     .email(request.getEmail())
                     .password(passwordEncoder.encode(request.getPassword()))
-                    .check_password(request.getCheck_password())
+                    .check_password(passwordEncoder.encode(request.getCheck_password()))
                     .username(request.getUsername())
                     .age(request.getAge())
                     .role(request.getRole())
