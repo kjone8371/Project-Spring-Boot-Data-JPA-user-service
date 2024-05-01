@@ -31,9 +31,9 @@ public class UserEntity {
     @Enumerated(EnumType.STRING)
     private Role role; // 직업 선택
 
-    @ManyToOne
-    @JoinColumn(name = "organization_id")
-    private OrganizationEntity organization;  // 사용자가 속한 조직
+//    @ManyToOne
+//    @JoinColumn(name = "organization_id")
+//    private OrganizationEntity organization;  // 사용자가 속한 조직
 
 
 }
