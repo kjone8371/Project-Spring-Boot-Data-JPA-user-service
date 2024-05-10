@@ -4,8 +4,12 @@ package com.kjone.kjonespringbootjpaproject.entity;
 import com.kjone.kjonespringbootjpaproject.domain.role.Role;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
-@Data
+import java.time.LocalDateTime;
+
+
 @Entity
 @Builder
 @AllArgsConstructor
@@ -25,8 +29,12 @@ public class UserEntity {
 
     @Column(name = "birth") // DB 테이블 나이 생년월일
     private int age; // 생년월일 나이
-    private String createTime; // 회원 생성 날짜
-    private Character emailTime; // 이메일 발급 인증 날짜
+
+    @CreatedDate
+    @Column(updatable = false)
+    private LocalDateTime createTime; // 생성 날짜
+    @LastModifiedDate
+    private LocalDateTime updateTime; // 업데이트 날짜
 
     @Enumerated(EnumType.STRING)
     private Role role; // 직업 선택
@@ -34,7 +42,6 @@ public class UserEntity {
 //    @ManyToOne
 //    @JoinColumn(name = "organization_id")
 //    private OrganizationEntity organization;  // 사용자가 속한 조직
-
 
 }
 

@@ -2,7 +2,6 @@ package com.kjone.kjonespringbootjpaproject.domain.user;
 
 
 import com.kjone.kjonespringbootjpaproject.domain.role.Role;
-import com.kjone.kjonespringbootjpaproject.entity.UserEntity;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -23,10 +23,9 @@ public class SignResponse {
     private String username;
     private int age;
     private Role role;
-    private List<Role> roles = new ArrayList<>(); // 권한을 가진 사용자 전체 직원 가져오기
     private String token;
 
-    public SignResponse(UserEntity user) {
+    public SignResponse(UserEntity user, String token) {
         this.id = user.getId();
         this.email = user.getEmail();
         this.password = user.getPassword();
@@ -34,6 +33,7 @@ public class SignResponse {
         this.username = user.getUsername();
         this.age = user.getAge();
         this.role = user.getRole();
+        this.token = token;
     }
 
 }

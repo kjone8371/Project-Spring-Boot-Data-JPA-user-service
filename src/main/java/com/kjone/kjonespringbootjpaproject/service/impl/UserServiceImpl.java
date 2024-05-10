@@ -1,15 +1,22 @@
 package com.kjone.kjonespringbootjpaproject.service.impl;
 
+import com.kjone.kjonespringbootjpaproject.JwtProvider;
 import com.kjone.kjonespringbootjpaproject.domain.user.SignRequest;
 import com.kjone.kjonespringbootjpaproject.domain.user.SignResponse;
 import com.kjone.kjonespringbootjpaproject.entity.UserEntity;
 import com.kjone.kjonespringbootjpaproject.repository.UserRepository;
 import com.kjone.kjonespringbootjpaproject.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.security.core.userdetails.User;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.Collections;
 
 
 @Service
@@ -17,6 +24,9 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    @Lazy
+    @Autowired
+    private JwtProvider jwtProvider;
 
 
     @Override
@@ -44,7 +54,6 @@ public class UserServiceImpl implements UserService {
                     .build();
             userRepository.save(entity);  // 사용자 저장
 
-
         return true; //성공적으로 등록됨.
     }
 
@@ -57,10 +66,27 @@ public class UserServiceImpl implements UserService {
             throw new Exception("Login failed: Incorrect password.");
         }
 
-        return new SignResponse(user);
+        String token = jwtProvider.createToken(user.getEmail(), user.getRole());
+
+
+        return new SignResponse(user, token);
     }
 
-
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        UserEntity user = userRepository.findByUsername(username).orElseThrow(
+                () -> new UsernameNotFoundException("User not found: " + username)
+        );
+        return new User(
+                user.getUsername(),
+                user.getPassword(),
+                true, // isAccountNonExpired
+                true, // isAccountNonLocked
+                true, // isCredentialsNonExpired
+                true, // isEnabled
+                Collections.singletonList(new SimpleGrantedAuthority("USER")) // 기본 권한 할당
+        );
+    }
 
 
 }
