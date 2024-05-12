@@ -1,35 +1,30 @@
-package com.kjone.kjonespringbootjpaproject;
+package com.kjone.kjonespringbootjpaproject.security.jwt;
 
-
-import com.kjone.kjonespringbootjpaproject.domain.role.Role;
-import com.kjone.kjonespringbootjpaproject.service.UserService;
-import com.kjone.kjonespringbootjpaproject.service.impl.UserServiceImpl;
-import jakarta.annotation.PostConstruct;
-import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.stereotype.Component;
-import org.springframework.beans.factory.annotation.Value;
-import lombok.RequiredArgsConstructor;
-
+import com.kjone.kjonespringbootjpaproject.domain.role.Authority;
+import com.kjone.kjonespringbootjpaproject.security.service.JpaUserDetailsService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletRequest;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
-import java.security.Key;
 import java.nio.charset.StandardCharsets;
+import java.security.Key;
 import java.util.Date;
 import java.util.List;
 
-
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-
-
-@RequiredArgsConstructor
 @Component
+@RequiredArgsConstructor
 public class JwtProvider {
+
     @Value("${jwt.secret.key}")
     private String salt;
 
@@ -38,7 +33,7 @@ public class JwtProvider {
     // 만료시간 : 1Hour
     private final long exp = 1000L * 60 * 60;
 
-    private final UserServiceImpl userServiceimpl;
+    private final JpaUserDetailsService userDetailsService;
 
     @PostConstruct
     protected void init() {
@@ -46,9 +41,9 @@ public class JwtProvider {
     }
 
     // 토큰 생성
-    public String createToken(String email, Role role) {
-        Claims claims = Jwts.claims().setSubject(email);
-        claims.put("role", role);
+    public String createToken(String account, List<Authority> roles) {
+        Claims claims = Jwts.claims().setSubject(account);
+        claims.put("roles", roles);
         Date now = new Date();
         return Jwts.builder()
                 .setClaims(claims)
@@ -61,7 +56,7 @@ public class JwtProvider {
     // 권한정보 획득
     // Spring Security 인증과정에서 권한확인을 위한 기능
     public Authentication getAuthentication(String token) {
-        UserDetails userDetails = userServiceimpl.loadUserByUsername(this.getAccount(token));
+        UserDetails userDetails = userDetailsService.loadUserByUsername(this.getAccount(token));
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 
@@ -91,5 +86,4 @@ public class JwtProvider {
             return false;
         }
     }
-
 }
