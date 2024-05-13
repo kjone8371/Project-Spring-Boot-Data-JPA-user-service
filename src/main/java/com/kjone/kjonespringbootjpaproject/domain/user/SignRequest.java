@@ -1,6 +1,7 @@
 package com.kjone.kjonespringbootjpaproject.domain.user;
 
 
+import com.kjone.kjonespringbootjpaproject.domain.role.Authority;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,5 +20,4 @@ public class SignRequest {
     private String name;
 
     private String email;
-
 }
